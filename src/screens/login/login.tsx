@@ -1,11 +1,8 @@
 
-import { Text, ImageBackground, StyleSheet, SafeAreaView, View } from 'react-native'
-import React from 'react'
-import { horizontalScale, moderateScale } from 'utils/responsive';
+import { Text, ImageBackground, SafeAreaView, View } from 'react-native';
 import { ImgAssets } from '@assets/index';
 import { Button, Divider, SvgIcon, TextInput } from 'components';
-import { GetPaletteHook } from 'theme';
-import { Poppins } from 'theme/fonts';
+import { getStyles } from './login.styles';
 
 const LoginScreen = () => {
     const styles = getStyles();
@@ -43,43 +40,6 @@ const LoginScreen = () => {
                 <Divider y={64} />
             </SafeAreaView>
         </ImageBackground>
-    )
-}
-
-
-const getStyles = () => {
-    const palette = GetPaletteHook();
-    return (
-        StyleSheet.create({
-            container: {
-                flex: 1,
-                paddingHorizontal: horizontalScale(40),
-            },
-            safeArea: {
-                flex: 1,
-                paddingHorizontal: horizontalScale(24),
-                alignItems: 'center',
-            },
-            container2: {
-                width: '100%',
-                flex: 1,
-                justifyContent: 'center',
-                alignItems: 'center',
-            },
-            containerInputs: {
-                width: '100%',
-            },
-            title: {
-                color: palette.textPrimary,
-                fontFamily: Poppins.SemiBold,
-                fontSize: moderateScale(24),
-            },
-            subTitle: {
-                color: palette.textSecondary,
-                fontFamily: Poppins.SemiBold,
-                textAlign: 'center'
-            }
-        })
     )
 }
 

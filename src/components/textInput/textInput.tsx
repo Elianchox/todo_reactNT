@@ -1,18 +1,9 @@
-import { View, Text, StyleSheet } from 'react-native';
-import React from 'react';
-import { TextInput as TextInputRN } from 'react-native-gesture-handler';
-import { GetPaletteHook } from 'theme';
-import { horizontalScale, moderateScale, verticalScale } from 'utils/responsive';
-import { Poppins } from 'theme/fonts';
-import { Divider } from 'components/divider/dividerComponent';
 
-interface TextInputProps {
-    value: string,
-    onChange: (s: string) => void;
-    placeHolder?: string,
-    type?: 'text' | 'password',
-    error?: string,
-}
+import { View, Text } from 'react-native';
+import { TextInput as TextInputRN } from 'react-native-gesture-handler';
+import { Divider } from 'components/divider/dividerComponent';
+import { getStyles } from './textInput.styles';
+import { TextInputProps } from './textInput.models';
 
 const TextInput = ({
     value,
@@ -35,37 +26,6 @@ const TextInput = ({
             <Divider y={6} />
             {error && <Text style={styles.error}>Essto es un error</Text>}
         </View>
-    )
-}
-
-const getStyles = () => {
-    const palette = GetPaletteHook();
-    return (
-        StyleSheet.create({
-            container: {
-                width: '100%',
-            },
-            input: {
-                //input
-                width: '100%',
-                backgroundColor: palette.backgroundInput,
-                paddingVertical: verticalScale(14),
-                paddingHorizontal: horizontalScale(16),
-                borderRadius: 20,
-
-
-                //Font
-                fontSize: moderateScale(16),
-                fontFamily: Poppins.Regular,
-                color: palette.textColorInput,
-            },
-            error: {
-                color: palette.error,
-                fontFamily: Poppins.Regular,
-                fontSize: moderateScale(16),
-                paddingHorizontal: horizontalScale(4)
-            }
-        })
     )
 }
 

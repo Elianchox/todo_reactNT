@@ -1,11 +1,10 @@
-import { View, Text, ImageBackground, SafeAreaView, StyleSheet } from 'react-native'
+
+import { View, Text, ImageBackground, SafeAreaView } from 'react-native'
 import React from 'react';
 import { ImgAssets } from '@assets/index';
-import { Poppins } from 'theme/fonts';
-import { horizontalScale, moderateScale } from 'utils/responsive';
 import { Button, Divider, SvgIcon } from 'components/index';
-import { GetPaletteHook } from 'theme/index';
 import { useNavigation } from '@react-navigation/native';
+import { getStyles } from './welcome.styles';
 
 
 const WelcomeScreen = () => {
@@ -32,38 +31,6 @@ const WelcomeScreen = () => {
                 <Divider y={64} />
             </SafeAreaView>
         </ImageBackground>
-    )
-}
-
-const getStyles = () => {
-    const palette = GetPaletteHook();
-    return (
-        StyleSheet.create({
-            container: {
-                flex: 1,
-                paddingHorizontal: horizontalScale(32),
-            },
-            safeArea: {
-                flex: 1,
-                paddingHorizontal: horizontalScale(24),
-            },
-            container2: {
-                width: '100%',
-                flex: 1,
-                justifyContent: 'center',
-                alignItems: 'center',
-            },
-            title: {
-                color: palette.textPrimary,
-                fontFamily: Poppins.SemiBold,
-                fontSize: moderateScale(24),
-            },
-            subTitle: {
-                color: palette.textSecondary,
-                fontFamily: Poppins.SemiBold,
-                textAlign: 'center'
-            }
-        })
     )
 }
 
