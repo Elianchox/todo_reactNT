@@ -5,11 +5,13 @@ import { Poppins } from 'theme/fonts';
 import { horizontalScale, moderateScale } from 'utils/responsive';
 import { Button, Divider, SvgIcon } from 'components/index';
 import { GetPaletteHook } from 'theme/index';
+import { useNavigation } from '@react-navigation/native';
 
 
-const Welcome = () => {
+const WelcomeScreen = () => {
 
-    const styles = getStyles()
+    const { navigate } = useNavigation();
+    const styles = getStyles();
 
     return (
         <ImageBackground source={ImgAssets.bg}
@@ -21,11 +23,11 @@ const Welcome = () => {
                 <View style={styles.container2}>
                     <SvgIcon icon='ICON1' width={180} height={168} />
                     <Divider y={124} />
-                    <Text style={styles.tittle}>Things To Do With TODO</Text>
+                    <Text style={styles.title}>Things To Do With TODO</Text>
                     <Divider y={32} />
-                    <Text style={styles.subTittle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper leo in eros parturient arcu odio diam. Gravida faucibus ac mauris et risus.</Text>
+                    <Text style={styles.subTitle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper leo in eros parturient arcu odio diam. Gravida faucibus ac mauris et risus.</Text>
                 </View>
-                <Button text='Get Started' />
+                <Button text='Get Started' onPress={() => navigate('login' as never)} />
                 <Divider y={64} />
             </SafeAreaView>
         </ImageBackground>
@@ -50,12 +52,12 @@ const getStyles = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
             },
-            tittle: {
+            title: {
                 color: palette.textPrimary,
                 fontFamily: Poppins.SemiBold,
                 fontSize: moderateScale(24),
             },
-            subTittle: {
+            subTitle: {
                 color: palette.textSecondary,
                 fontFamily: Poppins.SemiBold,
                 textAlign: 'center'
@@ -64,4 +66,4 @@ const getStyles = () => {
     )
 }
 
-export { Welcome }
+export { WelcomeScreen }

@@ -4,11 +4,12 @@ import { GetPaletteHook } from 'theme'
 import { Poppins } from 'theme/fonts';
 import { moderateScale, verticalScale } from '@utils/responsive';
 
-const Button = ({ text }: { text: string }) => {
+const Button = ({ text, onPress }: { text: string, onPress: () => void }) => {
     const styles = getStyles();
     return (
         <TouchableOpacity
             style={styles.container}
+            onPress={onPress}
         >
             <Text style={styles.text}>{text}</Text>
         </TouchableOpacity>
