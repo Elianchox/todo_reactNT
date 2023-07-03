@@ -7,8 +7,8 @@ const SCREEN_WIDTH: number = Dimensions.get('screen').width;
 const SCREEN_HEIGHT: number = Dimensions.get('screen').height;
 
 // Tamaño del mockup
-const guidelineBaseWidth: number = 375;
-const guidelineBaseHeight: number = 812;
+const guidelineBaseWidth: number = 430;
+const guidelineBaseHeight: number = 932;
 /**
  * @deprecated The method should not be used replaced by horizontalScale
  */
@@ -16,7 +16,7 @@ const scale = (size: number) => (SCREEN_WIDTH / guidelineBaseWidth) * size;
 
 const horizontalScale = (size: number) => (SCREEN_WIDTH / guidelineBaseWidth) * size;
 
-const verticalScale = (size:number) => (SCREEN_HEIGHT / guidelineBaseHeight) * size;
+const verticalScale = (size: number) => (SCREEN_HEIGHT / guidelineBaseHeight) * size;
 
 const moderateScale = (size: number, factor: number = 0.5): number => {
   return size + (horizontalScale(size) - size) * factor;

@@ -16,7 +16,8 @@ const WelcomeScreen = () => {
     return (
         <ImageBackground source={ImgAssets.bg}
             resizeMode="cover"
-            style={styles.container}>
+            style={styles.container}
+        >
             <SafeAreaView
                 style={styles.safeArea}
             >
