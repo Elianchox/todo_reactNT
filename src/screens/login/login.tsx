@@ -3,9 +3,13 @@ import { Text, ImageBackground, SafeAreaView, View } from 'react-native';
 import { ImgAssets } from '@assets/index';
 import { Button, Divider, SvgIcon, TextInput } from 'components';
 import { getStyles } from './login.styles';
+import { useNavigation } from '@react-navigation/native';
+import { PublicRouteNames } from 'routes/routeNames/publicRoutes';
 
 const LoginScreen = () => {
     const styles = getStyles();
+    const { navigate } = useNavigation();
+
     return (
         <ImageBackground source={ImgAssets.bg}
             resizeMode="cover"
@@ -35,7 +39,7 @@ const LoginScreen = () => {
                     </View>
                 </View>
                 <View style={{ width: '86%' }}>
-                    <Button text='Login' onPress={() => { }} />
+                    <Button text='Login' onPress={() => navigate(PublicRouteNames.HOME as never)} />
                 </View>
                 <Divider y={64} />
             </SafeAreaView>
