@@ -15,7 +15,7 @@ module.exports = {
     ecmaVersion: 2021,
     sourceType: 'module',
   },
-  plugins: ['react', 'react-native', '@typescript-eslint'],
+  plugins: ['react', 'react-native', '@typescript-eslint', "prettier"],
   rules: {
     'react-native/no-unused-styles': 'error',
     'react-native/split-platform-components': 'error',
