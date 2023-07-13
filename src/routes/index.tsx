@@ -1,6 +1,6 @@
 
 import { createStackNavigator } from '@react-navigation/stack';
-import { LoginScreen, WelcomeScreen } from 'screens';
+import { HomeScreen, LoginScreen, WelcomeScreen } from 'screens';
 import { PublicRouteNames } from './routeNames/publicRoutes';
 
 const Stack = createStackNavigator();
@@ -20,6 +20,10 @@ export const IndexNavigation = () => {
             <Stack.Screen
                 name={PublicRouteNames.LOGIN}
                 component={LoginScreen}
+            />
+            <Stack.Screen
+                name={PublicRouteNames.HOME}
+                component={HomeScreen}
             />
         </Stack.Navigator>
     );
